@@ -72,6 +72,13 @@ El cazador exige que tus pruebas pasen primero contra el Taller original. Códig
 
 La solución se publica después de la clase.
 
+## Solución de referencia
+
+- [`solucion/test_taller_solucion.py`](solucion/test_taller_solucion.py): las pruebas del taller con una fixture, una inscripción que se acepta y una que se rechaza.
+- [`solucion/test_turnos_solucion.py`](solucion/test_turnos_solucion.py): existencias negativas y el proveedor que cae, con un mock para cada error de red.
+
+Córrelas con `python -m pytest -v solucion/` desde esta carpeta y compáralas con las tuyas: ¿qué caso probaron ellas que las tuyas no?
+
 ## Para tu proyecto
 
 En tu repositorio:
