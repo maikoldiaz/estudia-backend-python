@@ -124,7 +124,23 @@ ruff check --isolated --select C901 --config 'lint.mccabe.max-complexity=1' --ou
 
 **Producto:** la complejidad antes y después, el porcentaje de cobertura antes y después, y qué prueba les habría avisado si la mejora hubiera cambiado el comportamiento.
 
-La solución se publica después de la clase.
+## Solución de referencia
+
+[`solucion/`](solucion/) es la práctica resuelta: `src/tarifa.py` refactorizado con una tabla de tramos y tres funciones pequeñas, y `tests/test_tarifa.py` con 26 pruebas.
+
+| | Antes | Después |
+|---|---|---|
+| Complejidad de `calcular_tarifa` | 17 | 5 |
+| Cobertura de ramas | 75 % (9 pruebas) | 100 % (26 pruebas) |
+
+```sh
+cd solucion
+python -m pytest --cov=tarifa --cov-branch --cov-report=term-missing
+ruff check .
+python equivalencia.py
+```
+
+`equivalencia.py` compara la versión original con la nueva en 7.840 combinaciones de entradas y cuenta las que dan distinto (deben ser 0). Compárala con tu mejora: ¿qué prueba tuya habría avisado si el redondeo hubiera cambiado?
 
 ## Para tu proyecto
 
